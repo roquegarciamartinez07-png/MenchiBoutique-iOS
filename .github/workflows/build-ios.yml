@@ -24,7 +24,7 @@ jobs:
         run: npx cap --version
 
       - name: Add iOS platform
-        run: npx cap add ios
+        run: npx cap add ios --packagemanager SPM
 
       - name: Sync iOS
         run: npx cap sync ios
@@ -32,11 +32,19 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild \
+            -resolvePackageDependencies \
+            -project ios/App/App.xcodeproj \
+            -scheme App
+
       - name: Build iOS Archive
         run: |
           mkdir -p build
+
           xcodebuild \
-            -workspace ios/App/App.xcworkspace \
+            -project ios/App/App.xcodeproj \
             -scheme App \
             -configuration Release \
             -destination 'generic/platform=iOS' \
