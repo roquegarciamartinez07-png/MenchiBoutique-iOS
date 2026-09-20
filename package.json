@@ -1,0 +1,19 @@
+{
+  "name": "menchi-boutique-ios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MENCHI BOUTIQUE iOS wrapper using the existing web application.",
+  "scripts": {
+    "sync:ios": "npx cap sync ios",
+    "open:ios": "npx cap open ios",
+    "run:ios": "npx cap run ios",
+    "copy:ios": "npx cap copy ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.5.2",
+    "@capacitor/ios": "8.5.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.2"
+  }
+}
