@@ -1,3 +1,12 @@
+name: Build iOS (Capacitor)
+
+on:
+workflow_dispatch:
+
+jobs:
+build:
+runs-on: macos-14
+
 steps:
   - name: Checkout
     uses: actions/checkout@v4
