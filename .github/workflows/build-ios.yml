@@ -33,7 +33,6 @@ jobs:
       - name: Build iOS Archive
         run: |
           mkdir -p build
-
           xcodebuild \
             -workspace ios/App/App.xcworkspace \
             -scheme App \
